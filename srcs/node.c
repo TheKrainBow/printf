@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 10:22:27 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 14:07:35 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/27 18:26:43 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void				node_to_functions(t_pf *printf_s)
 void				l_node_to_functions(t_pf *printf_s)
 {
 	if (printf_s->arg->type == 'c')
-		ft_char_function(va_arg(*printf_s->ap, long int), printf_s);
+		ft_char_function(va_arg(*printf_s->ap, wint_t), printf_s);
 	else if (printf_s->arg->type == 's')
 		ft_string_function(va_arg(*printf_s->ap, char *), printf_s);
 	else if (ft_strchr("di", printf_s->arg->type))
@@ -79,7 +79,7 @@ void				ll_node_to_functions(t_pf *printf_s)
 	else if (printf_s->arg->type == '%')
 		ft_char_function('%', printf_s);
 	else if (printf_s->arg->type == 'f')
-		ft_float_function(va_arg(*printf_s->ap, double), printf_s);
+		ft_float_function(va_arg(*printf_s->ap, long double), printf_s);
 	else if (printf_s->arg->type == 'n')
 		ft_n_function(va_arg(*printf_s->ap, long long int *), printf_s);
 }

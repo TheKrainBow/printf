@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 12:50:13 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 14:29:04 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/28 15:17:59 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+# include <wchar.h>
 
 typedef struct	s_float
 {
@@ -57,10 +58,11 @@ typedef struct	s_pf
 
 void			init_struct(t_pf *printf_s, char *str);
 int				ft_printf(const char *str, ...);
-void			ft_putchar(char c, t_pf *printf_s);
+void			ft_putchar(long long int c, t_pf *printf_s);
 void			ft_find_type(t_pf *printf_s);
 char			*ft_strchr_printf(const char *s, int c);
 void			ft_parsing(t_pf *printf_s);
+void			ft_putstring(char *s, t_pf *printf_s);
 
 void			node_to_functions(t_pf *printf_s);
 void			hh_node_to_functions(t_pf *printf_s);

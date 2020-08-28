@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 19:47:41 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/21 03:27:38 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/28 15:23:29 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,17 @@ void				nbr_recu(long long int n, char *s, int b_s, t_pf *printf_s)
 
 void				ft_putnbrbase(long long int n, char *base, t_pf *printf_s)
 {
-	int			b_size;
-	long int	number;
-	t_arg		*arg;
+	int				b_size;
+	long long int	number;
+	t_arg			*arg;
 
 	arg = printf_s->arg;
 	number = n;
+	if (n == LLONG_MIN)
+	{
+		ft_putstring("9223372036854775808", printf_s);
+		return ;
+	}
 	if (n < 0)
 		number = -number;
 	b_size = ft_strlen(base);
@@ -76,6 +81,8 @@ int					ft_sizenbr(long long int n, int base_size)
 	int			size_nbr;
 
 	size_nbr = 1;
+	if (n == LLONG_MIN)
+		return (19);
 	n = n < 0 ? -n : n;
 	while ((n = n / base_size) > 0)
 		size_nbr++;

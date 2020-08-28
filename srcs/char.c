@@ -6,13 +6,13 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 19:36:33 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 14:18:03 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/27 18:29:25 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void				ft_putchar(char c, t_pf *printf_s)
+void				ft_putchar(long long int c, t_pf *printf_s)
 {
 	write(1, &c, 1);
 	printf_s->n_c++;
